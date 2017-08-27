@@ -73,6 +73,8 @@ public class RouteResource {
 				routeRequest);
 		Future<RecordMetadata> response = producer.send(record);
 
+		producer.flush();
+
 		try {
 			response.get(1000, TimeUnit.MILLISECONDS);
 		} catch (InterruptedException | ExecutionException | TimeoutException e) {
