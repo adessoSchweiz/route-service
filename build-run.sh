@@ -10,4 +10,3 @@ docker build -t adesso/route-service:${VERSION} .
 docker stop route-service
 docker rm route-service
 docker run -d --name route-service --net=hackathon -p 8092:8080 adesso/route-service:${VERSION}
-docker logs route-service -f
